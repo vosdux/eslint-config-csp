@@ -1,9 +1,9 @@
 # Installation
 
 ```bash
-npm i --save-dev eslint @vosdux/eslint-config-csp
+npm i --save-dev eslint @vosdux/eslint-config-csp eslint prettier typescript
 # or if you're using yarn
-yarn add -D eslint @vosdux/eslint-config-csp
+yarn add -D eslint @vosdux/eslint-config-csp eslint prettier typescript
 ```
 
 # Usage
@@ -12,8 +12,8 @@ In your `eslintrc` file you can extend like this
 
 ```js
 module.exports = {
-  extends: ["yehezgun"],
-};
+  extends: ['@vosdux/csp'],
+}
 ```
 
 # What we used here
