@@ -34,6 +34,16 @@ module.exports = {
   rules: {
     "import/order": "warn",
     "react/prop-types": "off",
-    "no-restricted-globals": "off"
+    "no-restricted-globals": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { varsIgnorePattern: "React" }
+    ]
   }
 };

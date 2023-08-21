@@ -1,9 +1,9 @@
 # Installation
 
 ```bash
-npm i --save-dev eslint @vosdux/eslint-config-csp eslint prettier typescript
+npm i --save-dev @vosdux/eslint-config-csp eslint prettier typescript
 # or if you're using yarn
-yarn add -D eslint @vosdux/eslint-config-csp eslint prettier typescript
+yarn add -D @vosdux/eslint-config-csp eslint prettier typescript
 ```
 
 # Usage
@@ -30,4 +30,16 @@ module.exports = {
     "plugin:sonarjs/recommended",
     "plugin:prettier/recommended"
   ],
+```
+
+# Prettier config
+
+```js
+  {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true,
+    "endOfLine":"auto"
+  }
 ```
