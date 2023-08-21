@@ -43,3 +43,11 @@ module.exports = {
     "endOfLine":"auto"
   }
 ```
+
+# Problems
+If you have problem with 'no-unused-vars' and typescript add next rule in your `eslintrc` file
+```js
+  rules: {
+    "no-unused-vars": 'off'
+  }
+```
