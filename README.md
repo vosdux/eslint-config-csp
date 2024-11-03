@@ -6,48 +6,52 @@ npm i --save-dev @vosdux/eslint-config-csp eslint prettier typescript
 yarn add -D @vosdux/eslint-config-csp eslint prettier typescript
 ```
 
+# Legacy .eslintrc
+
+For use legacy eslint config
+https://www.npmjs.com/package/@vosdux/eslint-config-csp/v/2.1.1
+
 # Usage
 
-In your `eslintrc` file you can extend like this
+Example of `eslint.config.mjs`
 
 ```js
-module.exports = {
-  extends: ['@vosdux/csp'],
-}
+import config from "@vosdux/eslint-config-csp";
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...config];
 ```
 
-# What we used here
+or use command
+
+```bash
+npm init @eslint/config@latest -- --config @vosdux/eslint-config-csp
+```
+
+# Usage of prettier config
+
+Example of `.prettierrc.mjs`
 
 ```js
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "plugin:sonarjs/recommended",
-    "plugin:prettier/recommended"
-  ],
+import cspConfig from "@vosdux/eslint-config-csp/prettier-config/index.js";
+
+/**
+ * @type {import("prettier").Config}
+ */
+const config = {
+  ...cspConfig,
+};
+
+export default config;
 ```
 
-# Prettier config
+# What plugins we used here
 
-```js
-  {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": true,
-    "singleQuote": true,
-    "endOfLine":"auto"
-  }
-```
-
-# Problems
-If you have problem with 'no-unused-vars' and typescript add next rule in your `eslintrc` file
-```js
-  rules: {
-    "no-unused-vars": 'off'
-  }
-```
+eslint-config-prettier,
+eslint-import-resolver-typescript,
+eslint-plugin-import,
+eslint-plugin-prettier,
+eslint-plugin-react,
+eslint-plugin-react-hooks,
+eslint-plugin-sonarjs,
+typescript-eslint
